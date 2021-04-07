@@ -6,19 +6,19 @@ import {getDateToTitle} from '../../utils/utils.js';
 
 import c from './App.module.css';
 
-// todo: удалить моковые данные после подключения запроса с сервера
-import AREAS from '../../mocks/areas.js';
-import AGENDA from '../../mocks/agenda.js';
-
 function App() {
   const [areas, setAreas] = useState();
   const [agenda, setAgenda] = useState();
 
   useEffect(() => {
-    const load = () => {
-      // todo: переписать на запрос с сервера после решения вопроса с CORS на сервере
-      setAreas(AREAS);
-      setAgenda(AGENDA);
+    const load = async () => {
+      const areasData = await fetch ('https://dev.powerplace.online/api/v1/test/areas')
+        .then(res => res.json());
+      const agendaData = await fetch ('https://dev.powerplace.online/api/v1/test/agenda')
+        .then(res => res.json());
+
+      setAreas(areasData);
+      setAgenda(agendaData);
     };
 
     load();
