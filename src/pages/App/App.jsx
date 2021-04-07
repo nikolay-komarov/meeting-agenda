@@ -24,9 +24,9 @@ function App() {
     load();
   }, []);
 
-  const getUniqDateByArea = (area, agenda) => {
+  const getUniqDateByArea = (areas, areaId, agenda) => {
     return areas.map(area => {
-      const uniqDateSet = new Set(agenda[area.id].map(item => {
+      const uniqDateSet = new Set(agenda[areaId].map(item => {
         const date = new Date(item.startTime).toDateString();
         
         return date;
@@ -51,7 +51,7 @@ function App() {
                 <div key={area.id}>
                   <h2>Комната "{area.title}"</h2>
                   {
-                    getUniqDateByArea(area, agenda)
+                    getUniqDateByArea(areas, area.id, agenda)
                       .find(item => item.areaId === area.id)
                       .dates.map(date => {
                         return (
