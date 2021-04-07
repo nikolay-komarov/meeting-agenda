@@ -1,0 +1,31 @@
+.root {
+  display: flex;
+  flex-direction: column;
+}
+
+.meetingList {
+  margin: 0;
+  padding: 0;
+}
+
+.meetingItem {
+  list-style: none;
+}
+
+.timeBlock {
+  display: inline-block;
+}
+
+.timeBlockInnerWrapper {
+  display: flex;
+}
+
+.timeCol {
+  width: 50px;
+  margin: 0;
+  padding: 0;
+}
+
+.description {
+  display: inline;
+}

@@ -1,0 +1,17 @@
+.root {
+  width: 1200px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.title {
+  margin: 0;
+  padding: 20px 0;
+}
+
+.areasList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+}
